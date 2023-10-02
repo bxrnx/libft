@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int ft_toupper (int c)
+int ft_tolower (int c)
 {
     if (c >= 65 && c <= 90)
        { c = c +32; 

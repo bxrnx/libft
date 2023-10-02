@@ -1,5 +1,16 @@
-#include <stdio.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/02 10:54:00 by bemelend          #+#    #+#             */
+/*   Updated: 2023/10/02 10:54:52 by bemelend         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {
@@ -24,10 +35,10 @@ char	*ft_strdup(const char *s)
 	s2[i] = '\0';
 	return (s2);
 }
-
-int main()
+/*int main()
 {
-    const char *array = "Hola buenas tardes"; // Utiliza const char* para cadenas literales
+    const char *array = "Hola buenas tardes"; // Utiliza 
+	const char* para cadenas literales
 
     char *copia = strdup(array); // Almacena el resultado en una variable
 
@@ -39,4 +50,4 @@ int main()
     printf("Copia de la cadena: %s", copia);
     free(copia); // Libera la memoria asignada por strdup
     return 0;
-}
+}*/

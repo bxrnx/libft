@@ -1,4 +1,16 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/02 10:47:41 by bemelend          #+#    #+#             */
+/*   Updated: 2023/10/02 10:50:38 by bemelend         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 void    *ft_memmove(void *s1, const void *s2, size_t n)
 {
@@ -9,39 +21,28 @@ void    *ft_memmove(void *s1, const void *s2, size_t n)
     i = 0;
     if (p1 == p2 || n == 0)
     {
-        // No es necesario hacer nada si los punteros son iguales o n es cero.
         return p1;
     }
 
     if (p1 < p2 && p1 + n > p2)
     {
-        // Hay solapamiento y s2 se encuentra después de s1.
-        // Copiamos de derecha a izquierda para evitar sobreescritura prematura.
         p1 = p1 + n;
         p2 = p2 + n;
         while (n--)
-        {
             *(--p1) = *(--p2);
-        }
     }
     else
-    {
-        // No hay solapamiento o s2 se encuentra antes de s1.
-        // Copiamos de izquierda a derecha de manera normal.
+{
         while (n--)
-        {
             *p1++ = *p2++;
-        }
-    }
-
+}
     return s1;
 }
-
-int main()
+/*int main()
 {
     char destino[] = "Mecago";
     char source[] = "Siokek";
 
     printf("%s", ft_memmove(destino, source, 6));
     return (0);
-}
+}*/

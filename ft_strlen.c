@@ -1,4 +1,18 @@
-int	ft_strlen(char *str)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/02 10:58:35 by bemelend          #+#    #+#             */
+/*   Updated: 2023/10/02 10:58:48 by bemelend         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+int ft_strlen(char *str)
 {	
 	int	i;
 
@@ -9,10 +23,7 @@ int	ft_strlen(char *str)
 }
 
 /*
-   #include<stdio.h>
-  #include<unistd.h>
-  
-  int main()
+int main()
 {
     char mistring [] = "hola, mundo";
     int lenght = ft_strlen(mistring);

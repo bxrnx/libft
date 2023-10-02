@@ -1,6 +1,16 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/02 11:02:12 by bemelend          #+#    #+#             */
+/*   Updated: 2023/10/02 11:05:34 by bemelend         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 int is_in_set(char c, const char *set) {
     return strchr(set, c) != NULL;
@@ -43,8 +53,7 @@ char *ft_strtrim(const char *s1, const char *set) {
     }
     return result;
 }
-
-int main() {
+/*int main() {
     char str[] = "xxxnse que decirtexxx    ";
     char set[] = "x ";
 
@@ -57,4 +66,4 @@ int main() {
     }
 
     return 0;
-}
+}*/

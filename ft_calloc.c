@@ -1,6 +1,16 @@
-#include<stdio.h>
-#include<stddef.h>
-#include<stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/02 10:27:40 by bemelend          #+#    #+#             */
+/*   Updated: 2023/10/02 10:28:25 by bemelend         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <libft.h>
 
 void    *ft_calloc(size_t nelem, size_t longitud)
 {

@@ -1,5 +1,18 @@
-#include <stdio.h>
-char *ft_strchr (const char *s, int c)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/02 10:52:40 by bemelend          #+#    #+#             */
+/*   Updated: 2023/10/02 10:53:43 by bemelend         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+char*ft_strchr (const char *s, int c)
 {
     char a = (char)c;
     int i;
