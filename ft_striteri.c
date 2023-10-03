@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 10:52:40 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/03 08:47:44 by bemelend         ###   ########.fr       */
+/*   Created: 2023/10/03 12:27:34 by bemelend          #+#    #+#             */
+/*   Updated: 2023/10/03 13:19:07 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char*ft_strchr (const char *s, int c)
+void funciony(char *c)
 {
-    char a = (char)c;
-    int i;
-    i = 0;
+    if (*c >= 'a' && *c <= 'z' || *c >= 'A' && *c <= 'Z')
+	{
+        *c = toupper(*c);
+    }
+}
 
+void ft_striteri(char *s, void (*f)(char*)) {
+    unsigned int i = 0;
     while (s[i])
-        {
-            if ( s[i] == a)
-                return(&s[i]);
-            i++;
-        }
-        return('\0');
+	{
+        f(&s[i]);
+        i++;
+    }
 }
 
-int main()
-{
-    const char array[] = "en velda tu tiene rasón";
-    char b = 't';
-    printf("%s",ft_strchr(array, b));
-    return(0);
-}
+/*int main() {
+    char str[] = "en velda tengo 34 años brr";
+
+    printf("Cadena original: %s\n", str);
+
+    ft_striteri(str, funciony);
+
+    printf("Cadena modificada: %s\n", str);
+    return 0;
+}*/

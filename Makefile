@@ -23,6 +23,11 @@ SRC = ft_isalpha.c \
 		ft_atoi.c \
 		ft_calloc.c \
 		ft_strdup.c \
+		ft_substr.c \
+		ft_strjoin.c \
+		ft_strtrim.c \
+		ft_itoa.c \
+		ft_strmapi.c \
 
 OBJ = $(SRCS: .c=.o)
 OBJ_BONUS = $(SOURCE_BONUS:.c=.o)
