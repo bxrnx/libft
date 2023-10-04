@@ -20,9 +20,8 @@ char *itoa(int c) {
     int length = 0;
     int temp = c;
 
-    // Calcula la longitud de la cadena necesaria
     if (c == 0) {
-        length = 2; // "0" y el carácter nulo '\0'
+        length = 2;
     } else {
         if (c < 0) {
             length++;
@@ -33,42 +32,36 @@ char *itoa(int c) {
             length++;
         }
     }
-    // Reserva memoria dinámica para la cadena
-    char *str = (char *)malloc((length + 1) * sizeof(char)); // +1 para el carácter nulo '\0'
+    char *str = (char *)malloc((length + 1) * sizeof(char));
 
-    if (str == NULL) {
-        perror("malloc");
-        exit(1);
+    if (str == NULL) 
+    {
+        return(NULL);
     }
-    char *current = str + length; // Apunta al final de la cadena
+    char *current = str + length;
 
-    // Agrega el carácter nulo al final
     *current = '\0';
     current--;
-    // Agrega el signo negativo si es necesario
     if (c < 0) {
         current = str;
         *current = '-';
         c = -c; // Convierte el número a positivo
-    }
-    
+    }   
     current = (str + length) - 1;
-    // Convierte el entero en una cadena
     if (c == 0) {
         *current = '0';
-    } else {
-        // Rellena la cadena con dígitos
-        while (c != 0) {
+    } else 
+    {
+        while (c != 0) 
+        {
             *current = '0' + c % 10;
             c /= 10;
             current--;
         }
     }
-
     return str;
 }
-
-int main() {
+/*int main() {
     int num = -12345;
     char *str = itoa(num);
 
@@ -78,4 +71,4 @@ int main() {
     free(str);
 
     return 0;
-}
+}*/

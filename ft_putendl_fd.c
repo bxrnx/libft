@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 10:26:56 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/02 10:27:00 by bemelend         ###   ########.fr       */
+/*   Created: 2023/10/02 10:50:44 by bemelend          #+#    #+#             */
+/*   Updated: 2023/10/02 10:51:03 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(char c)
+void ft_putchar_fd(char* s, int fd)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	else
-		return (0); 
+    int i = 0;
+    
+    i = 0;
+    while (s[i])
+    {
+        write(fd, &s[i], 1);
+        i++;
+    }
+    write (fd, "\n", 1);
 }
-
-/*#include<stdio.h>
-
 int main()
 {
-    char c = 'a';
-    printf("%d\n", ft_isalpha(c));
-	return (0);
-}*/
+    char c[] = "Anasheee";
+    int fd = 1;
+
+    ft_putchar_fd(c, fd);
+    return 0;
+}
