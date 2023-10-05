@@ -34,7 +34,7 @@ void    *ft_calloc(size_t nelem, size_t longitud)
     return(s);
 }
 
-int main()
+/*int main()
 {
     size_t nelem = 5;
     size_t longitud = sizeof(int);
@@ -49,4 +49,4 @@ int main()
     printf("Puntero asignado por ft_calloc: %p\n", (void *)array);
     free (array);
     return (0);
-}
+}*/
