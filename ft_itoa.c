@@ -34,7 +34,7 @@ char *itoa(int c) {
     }
     char *str = (char *)malloc((length + 1) * sizeof(char));
 
-    if (str == NULL) 
+    if (str == NULL)
     {
         return(NULL);
     }
