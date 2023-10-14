@@ -1,6 +1,7 @@
 #include <stdlib.h>
 
-typedef struct nodo {
+typedef struct nodo
+{
     void *content;
     struct  *nodo;
 } estructura;
