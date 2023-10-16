@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/16 15:25:47 by bemelend          #+#    #+#             */
+/*   Updated: 2023/10/16 15:25:59 by bemelend         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
 void ft_lstclear(t_list **lst, void (*del)(void *)) {
     if (lst == NULL || del == NULL) {
         return; // Verificar que los argumentos no sean nulos

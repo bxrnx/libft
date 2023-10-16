@@ -6,17 +6,19 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 11:13:01 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/03 08:43:42 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/16 17:34:57 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int custom_abs(int num) {
+int custom_abs(int num)
+{
     return (num < 0) ? -num : num;
 }
 
-char *itoa(int c) {
+char *itoa(int c)
+{
     int length = 0;
     int temp = c;
 

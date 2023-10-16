@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/16 15:26:17 by bemelend          #+#    #+#             */
+/*   Updated: 2023/10/16 15:26:21 by bemelend         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
 void ft_lstdelone(t_list *lst, void (*del)(void *)) {
     if (lst == NULL || del == NULL) {
         return; // Verificar que los argumentos no sean nulos

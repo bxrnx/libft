@@ -1,6 +1,6 @@
 NAME = libft.a
 
-SRC = ft_isalpha.c \
+SRCS = ft_isalpha.c \
 		ft_isdigit.c \
 		ft_isalnum.c \
 		ft_isascii.c \
@@ -28,8 +28,24 @@ SRC = ft_isalpha.c \
 		ft_strtrim.c \
 		ft_itoa.c \
 		ft_strmapi.c \
+		ft_putchar_fd.c \
+		ft_putstr_fd.c \
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c \
+		ft_lstadd_back.c \
+		ft_lstadd_front.c \
+		ft_lstclear.c \
+		ft_lstdelone.c \
+		ft_lstiter.c \
+		ft_lstlast.c \
+		ft_lstmap.c \
+		ft_lstnew.c \
+		ft_lstsize.c \
+		ft_split.c \
+		ft_memchr.c \
 
-OBJ = $(SRCS: .c=.o)
+
+OBJ = $(SRCS:.c=.o)
 OBJ_BONUS = $(SOURCE_BONUS:.c=.o)
 
 CC = gcc
@@ -41,7 +57,7 @@ LIB = ar rcs
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -C $(SRCS)
+	$(LIB) $(NAME) $(OBJ)
 
 $(OBJ): $(SRCS)
 	$(CC) $(CFLAGS) -c $(SRCS)

@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/16 15:25:19 by bemelend          #+#    #+#             */
+/*   Updated: 2023/10/16 15:25:23 by bemelend         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
 void ft_lstadd_front(t_list **lst, t_list *new) {
     if (lst == NULL || new == NULL) {
         return;  // Verifica si lst o new son nulos

@@ -6,27 +6,27 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:27:40 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/02 10:28:25 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/16 17:25:41 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void    *ft_calloc(size_t nelem, size_t longitud)
 {
-    size_t  tamaño_total;
+    size_t  tamano_total;
     void    *str;
     char    *s;
     size_t  i;
-    
-    tamaño_total = nelem * longitud;
-    str = malloc(tamaño_total);
+
+    tamano_total = nelem * longitud;
+    str = malloc(tamano_total);
 
     if (str == NULL)
         return NULL;
     i = 0;
     s = (char *)str;
-    while (i < tamaño_total)
+    while (i < tamano_total)
     {
         s[i] = 0;
         i++;

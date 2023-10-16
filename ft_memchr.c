@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 15:28:01 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/16 15:28:02 by bemelend         ###   ########.fr       */
+/*   Created: 2023/10/16 16:23:53 by bemelend          #+#    #+#             */
+/*   Updated: 2023/10/16 16:32:27 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int *ft_strnstr (const void *s1, const void *s2, size_t n)
-
-char p2 = (char *) s2;
-char p1 = (char *) p2;
-size_t i;
-
-i = 0;
-if (p1 == p2)
-    return (0);
-while((p1[i] && p2[i]) && i < n)
+void	*ft_memchr(const void *str, int c, size_t len)
 {
-    if (p1[i] < p2[i])
-        return (-1);
-    else if (p1[i] > p2[i])
-        return (1);
-    i++;
+	while (len--)
+	{
+		if (*(unsigned char *)str == (unsigned char)c)
+			return ((void *)str);
+		str++;
+	}
+	return (NULL);
 }
+/*int main()
+{
+	char str[] = "Hello World";
+	char *p = ft_memchr(str, 'W', 11);
+	printf("%s\n", p);
+	return (0);
+}*/

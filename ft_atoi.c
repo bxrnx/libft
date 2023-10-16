@@ -6,12 +6,11 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 16:47:57 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/02 10:22:27 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/16 15:44:03 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
