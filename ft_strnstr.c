@@ -6,26 +6,37 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:28:01 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/16 15:28:02 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/17 17:41:49 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int *ft_strnstr (const void *s1, const void *s2, size_t n)
-
-char p2 = (char *) s2;
-char p1 = (char *) p2;
-size_t i;
-
-i = 0;
-if (p1 == p2)
-    return (0);
-while((p1[i] && p2[i]) && i < n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-    if (p1[i] < p2[i])
-        return (-1);
-    else if (p1[i] > p2[i])
-        return (1);
-    i++;
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	if (*needle == '\0' || needle == NULL)
+		return ((char *)haystack);
+	while (haystack[i] != '\0' && i < len)
+	{
+		j = 0;
+		while (needle[j] == haystack[i + j] && i + j < len)
+		{
+			if (needle[j + 1] == '\0')
+				return ((char *)haystack + i);
+			j++;
+		}
+		i++;
+	}
+	return (NULL);
 }
+/*int main()
+{
+	char str[] = "Hello World";
+	char *p = ft_strnstr(str, "World", 11);
+	printf("%s\n", p);
+	return (0);
+}*/

@@ -6,29 +6,25 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:24:49 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/16 15:25:01 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/17 15:24:00 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_back(t_list **lst, t_list *new) {
-    if (lst == NULL || new == NULL) {
-        return; // Verificar que los argumentos no sean nulos
-    }
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*temporal;
 
-    if (*lst == NULL) {
-        // Si la lista está vacía, el nuevo nodo se convierte en el primer nodo
-        *lst = new;
-    } else {
-        // Si la lista no está vacía, recorremos la lista hasta llegar al último nodo
-        t_list *current = *lst;
-        while (current->next != NULL) {
-            current = current->next;
-        }
-        // Conectamos el nuevo nodo al final de la lista
-        current->next = new;
-    }
+	temporal = (*lst);
+	if ((*lst))
+	{
+		while (temporal->next != NULL)
+			temporal = temporal->next;
+		temporal->next = new;
+	}
+	if (!(*lst))
+		((*lst) = new);
 }
 /*int main() {
     // Crear una lista de prueba con tres nodos

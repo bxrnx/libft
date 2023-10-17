@@ -6,27 +6,32 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:26:43 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/16 15:26:45 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/17 16:02:52 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst) {
-    if (lst == NULL) {
-        return NULL;
-    }
+t_list	*ft_lstlast(t_list *lst)
+{
+	t_list	*p;
 
-    t_list *last = lst;
-
-    while (last->next != NULL) {
-        last = last->next;
-    }
-
-    return last;
+	p = lst;
+	if (p == NULL || lst == NULL)
+		return (NULL);
+	if (p->next == NULL)
+		return (p);
+	while (p)
+	{
+		if (p->next == NULL)
+			return (p);
+		p = p->next;
+	}
+	return (p);
 }
 
-int main() {
+/*int main()
+{
     // Crear una lista enlazada de ejemplo con tres nodos
     t_list node1, node2, node3;
     node1.content = "Nodo 1";
@@ -43,10 +48,11 @@ int main() {
 
     // Imprimir el contenido del último nodo
     if (ultimoNodo != NULL) {
-        printf("El contenido del último nodo es: %s\n", (char *)ultimoNodo->content);
+        printf("El contenido del último nodo es: 
+        %s\n", (char *)ultimoNodo->content);
     } else {
         printf("La lista está vacía.\n");
     }
 
     return 0;
-}
+}*/

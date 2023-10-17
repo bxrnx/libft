@@ -6,7 +6,7 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:50:44 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/02 10:51:03 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/17 16:41:09 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_memset(void *str, int c, size_t len)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*ptr;
 
 	ptr = str;

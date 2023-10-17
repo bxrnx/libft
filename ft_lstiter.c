@@ -6,31 +6,19 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:26:31 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/16 15:26:37 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/17 16:01:26 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstiter(t_list *lst, void (*f)(void *)) {
-    if (lst == NULL || f == NULL) {
-        return; // Verificar que los argumentos no sean nulos
-    }
-
-    // Iterar a través de la lista y aplicar la función 'f' en el contenido de cada nodo
-    t_list *current = lst;
-    while (current != NULL) {
-        f(current->content);
-        current = current->next;
-    }
-}
-
-// Función de ejemplo para imprimir un entero (puede ser personalizada según el tipo de contenido)
-void print_int(void *content) {
-    int *value = (int *)content;
-    if (value != NULL) {
-        printf("%d\n", *value);
-    }
+void	ft_lstiter(t_list *lst, void (*f)(void *))
+{
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }
 
 /*int main() {

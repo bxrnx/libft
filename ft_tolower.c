@@ -6,24 +6,24 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:28:33 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/16 15:28:34 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/17 18:04:59 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_tolower (int c)
+int	ft_tolower(int c)
 {
-    if (c >= 65 && c <= 90)
-       { c = c +32; 
-        write (1, &c, 1);
-       }
-    else
-        return(c);
+	if (c >= 65 && c <= 90)
+	{
+		c = c + 32;
+		write (1, &c, 1);
+	}
+	return (c);
 }
 
-int main()
+/*int main()
 {
     ft_toupper(78);
     return(0);
-}
+}*/

@@ -6,62 +6,79 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 11:13:01 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/16 17:34:57 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/17 15:17:18 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int custom_abs(int num)
+int	digit_counter(int n)
 {
-    return (num < 0) ? -num : num;
+	int	i;
+	int	copy;
+
+	i = 0;
+	if (n == 0)
+		return (1);
+	if (n == -2147483648)
+		return (11);
+	if (n < 0)
+	{
+		n = -n;
+		i++;
+	}
+	copy = n;
+	while (copy > 0)
+	{
+		copy = copy / 10;
+		i++;
+	}
+	return (i);
 }
 
-char *itoa(int c)
+int		exp_counter(int n)
 {
-    int length = 0;
-    int temp = c;
+	int exp;
+	int	digits;
 
-    if (c == 0) {
-        length = 2;
-    } else {
-        if (c < 0) {
-            length++;
-            temp = -temp;
-        }
-        while (temp != 0) {
-            temp /= 10;
-            length++;
-        }
-    }
-    char *str = (char *)malloc((length + 1) * sizeof(char));
+	if (n == 0)
+		return (1);
+	if (n == -2147483648)
+		return (1000000000);
+	digits = digit_counter(n);
+	if (n < 0)
+		digits--;
+	exp = 1;
+	while (--digits)
+		exp = exp * 10;
+	return (exp);
+}
 
-    if (str == NULL)
-    {
-        return(NULL);
-    }
-    char *current = str + length;
+char	*ft_itoa(int n)
+{
+	char		*str;
+	int			exp;
+	int			i;
+	long int	copy;
 
-    *current = '\0';
-    current--;
-    if (c < 0) {
-        current = str;
-        *current = '-';
-        c = -c; // Convierte el número a positivo
-    }   
-    current = (str + length) - 1;
-    if (c == 0) {
-        *current = '0';
-    } else 
-    {
-        while (c != 0) 
-        {
-            *current = '0' + c % 10;
-            c /= 10;
-            current--;
-        }
-    }
-    return str;
+	copy = (long int)n;
+	exp = exp_counter(n);
+	i = 0;
+	if (!(str = malloc(digit_counter(n) + 1)))
+		return (NULL);
+	if (n < 0)
+	{
+		str[i++] = '-';
+		copy = -copy;
+	}
+	while (exp > 0)
+	{
+		str[i++] = (copy / exp) + 48;
+		copy = copy % exp;
+		exp = exp / 10;
+	}
+	str[i] = '\0';
+	return (str);
 }
 /*int main() {
     int num = -12345;

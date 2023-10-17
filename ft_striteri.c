@@ -6,27 +6,30 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 12:27:34 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/03 13:19:07 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/17 18:10:04 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void funciony(char *c)
+void	funciony(char *c)
 {
-    if (*c >= 'a' && *c <= 'z' || *c >= 'A' && *c <= 'Z')
+	if (*c >= 'a' && *c <= 'z' || *c >= 'A' && *c <= 'Z')
 	{
-        *c = toupper(*c);
-    }
+		*c = toupper(*c);
+	}
 }
 
-void ft_striteri(char *s, void (*f)(char*)) {
-    unsigned int i = 0;
-    while (s[i])
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	unsigned int	i;
+
+	i = 0;
+	while (s[i])
 	{
-        f(&s[i]);
-        i++;
-    }
+		f(&s[i]);
+		i++;
+	}
 }
 
 /*int main() {

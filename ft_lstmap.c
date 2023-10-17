@@ -6,75 +6,34 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:26:49 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/16 15:26:52 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/17 18:14:39 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *)) {
-    if (lst == NULL || f == NULL) {
-        return NULL;
-    }
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	*gon;
+	t_list	*aux;
+	t_list	*auxgon;
 
-    t_list *new_list = NULL;
-    t_list *current = lst;
-
-    while (current != NULL) {
-        void *new_content = f(current->content);
-        if (new_content == NULL) {
-            // Si la función 'f' devuelve NULL, liberar la nueva lista y salir
-            ft_lstclear(&new_list, del);
-            return NULL;
-        }
-
-        t_list *new_node = ft_lstnew(new_content);
-        if (new_node == NULL) {
-            // Si falla la reserva de memoria, liberar la nueva lista y salir
-            ft_lstclear(&new_list, del);
-            return NULL;
-        }
-
-        // Agregar el nuevo nodo a la lista resultante
-        if (new_list == NULL) {
-            new_list = new_node;
-        } else {
-            t_list *last = new_list;
-            while (last->next != NULL) {
-                last = last->next;
-            }
-            last->next = new_node;
-        }
-
-        current = current->next;
-    }
-
-    return new_list;
+	aux = lst;
+	if (!(gon = malloc(sizeof(t_list))))
+		return (0);
+	auxgon = gon;
+	while (aux)
+	{
+		auxgon->content = f(aux->content);
+		if (!(auxgon->next = malloc(sizeof(t_list))))
+			ft_lstclear(&aux, del);
+		aux = aux->next;
+		auxgon = auxgon->next;
+	}
+	return (gon);
 }
 
-// Función de ejemplo para duplicar un entero (puede ser personalizada según el tipo de contenido)
-void *duplicate_int(void *content) {
-    int *value = (int *)content;
-    if (value == NULL) {
-        return NULL;
-    }
-
-    int *new_value = malloc(sizeof(int));
-    if (new_value) {
-        *new_value = *value;
-    }
-
-    return new_value;
-}
-
-// Función para liberar un entero (puede ser personalizada según el tipo de contenido)
-void del_int(void *content) {
-    if (content != NULL) {
-        free(content);
-    }
-}
-
-int main() {
+/*int main() {
     // Crear una lista de prueba con tres nodos con contenido entero
     t_list *head = ft_lstnew(NULL); // Lista vacía
     int data1 = 42;
@@ -96,7 +55,8 @@ int main() {
 
     // Liberar la memoria
     ft_lstclear(&head, NULL); // No se libera el contenido de la lista original
-    ft_lstclear(&duplicated_list, del_int); // Se libera el contenido de la lista duplicada
+    ft_lstclear(&duplicated_list, del_int); // Se libera el contenido de la lista
+     sduplicada
 
     return 0;
-}
+}*/

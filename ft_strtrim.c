@@ -6,52 +6,48 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 11:02:12 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/02 11:05:34 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/17 17:47:25 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int is_in_set(char c, const char *set) {
-    return strchr(set, c) != NULL;
+int	flag_guessing(char const *s1, char c)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i])
+		if (s1[i++] == c)
+			return (1);
+	return (0);
 }
 
-char *ft_strtrim(const char *s1, const char *set) {
-    if (s1 == NULL || set == NULL) {
-        return NULL; // Manejo de errores
-    }
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	size_t	i;
+	char	*new;
+	size_t	len;
+	size_t	k;
 
-    // Encontrar el primer carácter no perteneciente a 'set' desde el principio
-    int start = 0;
-    while (s1[start] != '\0' && is_in_set(s1[start], set)) {
-        start++;
-    }
-
-    // Encontrar el último carácter no perteneciente a 'set' desde el final
-    int end = strlen(s1) - 1;
-    while (end >= 0 && is_in_set(s1[end], set)) {
-        end--;
-    }
-
-    // Calcular la longitud de la subcadena resultante
-    int trim_len = end - start + 1;
-
-    // Manejo de casos especiales
-    if (trim_len <= 0) {
-        char *result = (char *)malloc(1);
-        if (result != NULL) {
-            result[0] = '\0';
-        }
-        return result;
-    }
-
-    // Reservar memoria para la subcadena resultante y copiar los caracteres
-    char *result = (char *)malloc(trim_len + 1);
-    if (result != NULL) {
-        strncpy(result, s1 + start, trim_len);
-        result[trim_len] = '\0';
-    }
-    return result;
+	i = 0;
+	k = 0;
+	if (!s1)
+		return (NULL);
+	len = ft_strlen(s1);
+	while (flag_guessing(set, s1[i]) && s1[i])
+		i++;
+	while (flag_guessing(set, s1[len - 1]) && (len - 1))
+		len--;
+	if (len < i)
+		len = i;
+	new = malloc(len - i + 1);
+	if (!new)
+		return (NULL);
+	while (i < len)
+		new[k++] = s1[i++];
+	new[k] = '\0';
+	return (new);
 }
 /*int main() {
     char str[] = "xxxnse que decirtexxx    ";

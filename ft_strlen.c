@@ -6,13 +6,13 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:58:35 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/03 13:19:16 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/17 17:10:28 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {	
 	int	i;
 

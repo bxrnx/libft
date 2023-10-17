@@ -6,22 +6,17 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:25:19 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/16 15:25:23 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/17 15:24:29 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_front(t_list **lst, t_list *new) {
-    if (lst == NULL || new == NULL) {
-        return;  // Verifica si lst o new son nulos
-    }
-
-    new->next = *lst; // El siguiente del nuevo nodo apunta al primer nodo actual
-
-    *lst = new; // El inicio de la lista apunta ahora al nuevo nodo
+void	ft_lstadd_front(t_list **lst, t_list *new)
+{
+	new->next = *lst;
+	*lst = new;
 }
-
 /*int main() {
     // Ejemplo de uso de ft_lstadd_front
     t_list *list = NULL; // Inicializa una lista vacía

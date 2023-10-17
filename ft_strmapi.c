@@ -6,37 +6,37 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 10:06:18 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/03 11:19:12 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/17 17:16:13 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char funcionx(unsigned int num, char c)
+char	funcionx(unsigned int num, char c)
 {
     return (num % 2 == 0) ? toupper(c) : c;
 }
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    if (s == NULL)
-        return NULL;
-    unsigned int i = 0;
-    unsigned int len = strlen(s);
+	char			*str;
+	unsigned int	i;
+	unsigned int	len;
 
-    char *str = malloc(len + 1);
+	i = 0;
+	str = malloc(len + 1);
+	len = strlen(s);
 
-    if (str == NULL)
-        return NULL;
-    while (i < len)
-    {
-        str[i] = f(i, s[i]);
-        i++;
-    }
-    str[i] = '\0';
-    return str;
+	if (str == NULL)
+		return (NULL);
+	while (i < len)
+	{
+		str[i] = f(i, s[i]);
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
-
 /*int main()
 {
     char str[] = "Hola que tal";
