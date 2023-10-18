@@ -6,7 +6,7 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:30:59 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/17 16:48:03 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/18 15:17:37 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_putnbr_fd(int n, int fd)
 		write (fd, "-", 1);
 		n *= -1;
 	}
-	if (n > 9 )
+	if (n > 9)
 	{
 		ft_putnbr_fd (n / 10, fd);
 		ft_putnbr_fd (n % 10, fd);

@@ -6,7 +6,7 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 12:27:34 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/17 18:10:04 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/18 19:36:28 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	funciony(char *c)
 {
-	if (*c >= 'a' && *c <= 'z' || *c >= 'A' && *c <= 'Z')
+	if ((*c >= 'a' && *c <= 'z') || (*c >= 'A' && *c <= 'Z'))
 	{
-		*c = toupper(*c);
+		*c = ft_toupper(*c);
 	}
 }
 
@@ -27,7 +27,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	i = 0;
 	while (s[i])
 	{
-		f(&s[i]);
+		f(i, &s[i]);
 		i++;
 	}
 }

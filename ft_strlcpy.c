@@ -6,11 +6,11 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:57:31 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/17 17:10:21 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/18 18:38:44 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

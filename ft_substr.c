@@ -6,7 +6,7 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 11:01:52 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/17 18:03:16 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/18 15:21:28 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*subs;
 
 	i = 0;
-
 	while (s[i])
 		i++;
 	len = i;
@@ -35,7 +34,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	subs[j] = '\0';
 	return (subs);
-
 }
 /*int main()
 {

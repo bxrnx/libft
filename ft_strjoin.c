@@ -6,7 +6,7 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:55:32 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/17 17:09:58 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/18 19:52:12 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,30 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char			*s3;
-	unsigned int	i;
-	unsigned int	j;
+	char	*str;
+	int		a;
+	int		b;
+	int		i;
 
-	s3 = malloc(strlen(s1) + strlen(s2) + 1);
-	if (!s3)
+	if (!s1 || !s2)
 		return (NULL);
-	strcpy(s3, s1);
-	strcat(s3, s2);
-	return (s3);
+	a = ft_strlen(s1);
+	b = ft_strlen(s2);
+	i = 0;
+	str = malloc((a + b + 1));
+	if (!str)
+		return (NULL);
+	while (a--)
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	a = i;
+	i = 0;
+	while (b--)
+		str[a++] = s2[i++];
+	str[a] = '\0';
+	return (str);
 }
 /*int main()
 {
@@ -33,4 +47,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	printf("%s\n", ft_strjoin(s1, s2));
 	return 0;
 }*/
-

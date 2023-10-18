@@ -6,28 +6,31 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:46:32 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/17 16:36:15 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/18 19:41:49 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *s1, const void *s2, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	const char	*p1;
-	const char	*p2;
-	size_t		i;
+	unsigned const char	*s;
+	unsigned char		*d;
+	size_t				i;
 
+	s = (unsigned char *)src;
+	d = (unsigned char *)dst;
 	i = 0;
-	p1 = (char *) s1;
-	p2 = (const char *) s2;
-	while (i < n)
+	while (dst == src || !n)
 	{
-		p1[i] = p2[i];
+		return (dst);
+	}
+	while (n > i)
+	{
+		d[i] = s[i];
 		i++;
 	}
-	p1[i] = '\0';
-	return (p1);
+	return (dst);
 }
 
 /*int main()

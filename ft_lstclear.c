@@ -6,7 +6,7 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:25:47 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/17 16:00:23 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/18 15:32:19 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*gon;
 	t_list	*aux;
 
-	if (!(aux = *lst))
+	aux = *lst;
+	if (!lst || !del)
 		return ;
 	while (aux)
 	{

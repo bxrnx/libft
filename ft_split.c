@@ -6,11 +6,9 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:27:31 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/17 16:54:07 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/18 15:17:53 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "libft.h"
 #include <string.h>

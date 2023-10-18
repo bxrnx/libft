@@ -6,7 +6,7 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:37:05 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/17 16:33:25 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/18 19:09:46 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,6 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	p2 = (char *) s2;
 	p1 = (char *) s1;
-
-	if (p1 == p2)
-		return (0);
 	while ((p1[i] && p2[i]) && i < n)
 	{
 		if (p1[i] < p2[i])
@@ -32,6 +29,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 			return (1);
 		i++;
 	}
+	return (0);
 }
 
 /*int main()

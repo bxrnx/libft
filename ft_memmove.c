@@ -6,7 +6,7 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:47:41 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/17 16:40:03 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/18 15:17:19 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	*ft_memmove(void *s1, const void *s2, size_t n)
 	p2 = (const char *)s2;
 	if (p1 == p2 || n == 0)
 		return (p1);
-
 	if (p1 < p2 && p1 + n > p2)
 	{
 		p1 = p1 + n;

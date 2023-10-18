@@ -6,7 +6,7 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:54:00 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/17 17:03:33 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/18 15:18:40 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ char	*ft_strdup(const char *s)
 		return (NULL);
 	i = 0;
 	s2 = (char *)str;
-
 	while (s2[i] && s[i])
 	{
 		s2[i] = s[i];

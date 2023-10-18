@@ -6,7 +6,7 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 11:13:01 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/17 15:17:18 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/18 15:30:00 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ int	digit_counter(int n)
 	return (i);
 }
 
-int		exp_counter(int n)
+int	exp_counter(int n)
 {
-	int exp;
+	int	exp;
 	int	digits;
 
 	if (n == 0)
@@ -64,9 +64,9 @@ char	*ft_itoa(int n)
 	copy = (long int)n;
 	exp = exp_counter(n);
 	i = 0;
-	if (!(str = malloc(digit_counter(n) + 1)))
+	str = malloc(digit_counter(n) + 1);
+	if (str == NULL)
 		return (NULL);
-	if (n < 0)
 	{
 		str[i++] = '-';
 		copy = -copy;

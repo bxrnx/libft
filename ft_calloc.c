@@ -6,7 +6,7 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:27:40 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/17 14:41:27 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/18 15:08:01 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	*ft_calloc(size_t nelem, size_t longitud)
 
 	tamano_total = nelem * longitud;
 	str = malloc(tamano_total);
-
 	if (str == NULL)
 		return (NULL);
 	i = 0;

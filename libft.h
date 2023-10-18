@@ -6,7 +6,7 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 09:37:26 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/17 18:11:54 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/18 19:41:18 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,6 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}					t_list;
 
 /* libc */
 
