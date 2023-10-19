@@ -6,7 +6,7 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:47:41 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/18 15:17:19 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/19 20:36:18 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	*ft_memmove(void *s1, const void *s2, size_t n)
 	const char	*p2;
 	size_t		i;
 
+	n = 0;
 	i = 0;
 	p1 = (char *)s1;
 	p2 = (const char *)s2;
@@ -26,7 +27,7 @@ void	*ft_memmove(void *s1, const void *s2, size_t n)
 	if (p1 < p2 && p1 + n > p2)
 	{
 		p1 = p1 + n;
-		p2 = p2 + n;
+		p2 = p2 + n;                    //NO ENTIENDO EL CÓDIGO FUCK
 		while (n--)
 			*(--p1) = *(--p2);
 	}
