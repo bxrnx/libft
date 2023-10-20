@@ -6,37 +6,39 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:47:41 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/19 20:36:18 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/20 15:11:35 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *s1, const void *s2, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char		*p1;
-	const char	*p2;
-	size_t		i;
+	size_t			i;
+	char			j;
+	unsigned char	*d;
+	unsigned char	*s;
 
-	n = 0;
 	i = 0;
-	p1 = (char *)s1;
-	p2 = (const char *)s2;
-	if (p1 == p2 || n == 0)
-		return (p1);
-	if (p1 < p2 && p1 + n > p2)
+	j = 1;
+	d = (unsigned char *)dest;
+	s = (unsigned char *)src;
+	if (!dest && !src)
+		return (NULL);
+	if (dest > src)
 	{
-		p1 = p1 + n;
-		p2 = p2 + n;                    //NO ENTIENDO EL CÓDIGO FUCK
-		while (n--)
-			*(--p1) = *(--p2);
+		j = -1;
+		d += n - 1;
+		s += n - 1;
 	}
-	else
+	while (i < n)
 	{
-		while (n--)
-			*p1++ = *p2++;
+		*d = *s;
+		d = d + j;
+		s = s + j;
+		i++;
 	}
-	return (s1);
+	return (dest);
 }
 /*int main()
 {

@@ -6,39 +6,32 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 10:06:18 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/18 19:30:23 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/20 19:19:33 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	funcionx(unsigned int num, char c)
-{
-	if (num % 2 == 0)
-		return (ft_toupper(c));
-	else
-		return (c);
-}
-
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char			*str;
 	unsigned int	i;
-	unsigned int	len;
+	unsigned int	length;
+	char			*res;
 
-	len = 0;
-	i = 0;
-	str = malloc(len + 1);
-	len = ft_strlen(s);
-	if (str == NULL)
+	if (!s)
 		return (NULL);
-	while (i < len)
+	length = ft_strlen(s);
+	res = malloc(length * sizeof(char) + 1);
+	if (!res)
+		return (NULL);
+	i = 0;
+	while (i < length)
 	{
-		str[i] = f(i, s[i]);
+		res[i] = (*f)(i, s[i]);
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	res[i] = '\0';
+	return (res);
 }
 /*int main()
 {

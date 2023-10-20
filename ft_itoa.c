@@ -6,79 +6,62 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 11:13:01 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/18 15:30:00 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/20 18:50:10 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	digit_counter(int n)
+static char	*ft_char(char *s, unsigned int number, long int len)
 {
-	int	i;
-	int	copy;
-
-	i = 0;
-	if (n == 0)
-		return (1);
-	if (n == -2147483648)
-		return (11);
-	if (n < 0)
+	while (number > 0)
 	{
-		n = -n;
-		i++;
+		s[len--] = 48 + (number % 10);
+		number = number / 10;
 	}
-	copy = n;
-	while (copy > 0)
-	{
-		copy = copy / 10;
-		i++;
-	}
-	return (i);
+	return (s);
 }
 
-int	exp_counter(int n)
+static long int	ft_len(int n)
 {
-	int	exp;
-	int	digits;
+	int	len;
 
-	if (n == 0)
-		return (1);
-	if (n == -2147483648)
-		return (1000000000);
-	digits = digit_counter(n);
-	if (n < 0)
-		digits--;
-	exp = 1;
-	while (--digits)
-		exp = exp * 10;
-	return (exp);
+	len = 0;
+	if (n <= 0)
+		len = 1;
+	while (n != 0)
+	{
+		len++;
+		n = n / 10;
+	}
+	return (len);
 }
 
 char	*ft_itoa(int n)
 {
-	char		*str;
-	int			exp;
-	int			i;
-	long int	copy;
+	char				*s;
+	long int			len;
+	unsigned int		number;
+	int					sign;
 
-	copy = (long int)n;
-	exp = exp_counter(n);
-	i = 0;
-	str = malloc(digit_counter(n) + 1);
-	if (str == NULL)
+	sign = 1;
+	len = ft_len(n);
+	s = (char *)malloc(sizeof(char) * (len + 1));
+	if (!(s))
 		return (NULL);
+	s[len--] = '\0';
+	if (n == 0)
+		s[0] = '0';
+	if (n < 0)
 	{
-		str[i++] = '-';
-		copy = -copy;
+		sign *= -1;
+		number = n * -1;
+		s[0] = '-';
 	}
-	while (exp > 0)
-	{
-		str[i++] = (copy / exp) + 48;
-		copy = copy % exp;
-		exp = exp / 10;
-	}
-	str[i] = '\0';
-	return (str);
+	else
+		number = n;
+	s = ft_char(s, number, len);
+	return (s);
 }
 /*int main() {
     int num = -12345;

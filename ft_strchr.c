@@ -6,7 +6,7 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:52:40 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/18 19:00:38 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/20 15:47:38 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,13 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	a;
-	int		i;
-
-	i = 0;
-	a = (char)c;
-	while (s[i])
+	while ((char)c != *s)
 	{
-		if (s[i] == a)
-			return ((char *)&s[i]);
-		i++;
+		if (!*s)
+			return (0);
+		s++;
 	}
-	return (NULL);
+	return ((char *)s);
 }
 /*int main()
 {

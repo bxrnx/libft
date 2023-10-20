@@ -6,7 +6,7 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:30:59 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/18 15:17:37 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/20 19:28:58 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,21 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	c;
+	long	nb;
 
-	if (n == -2147483648)
-		write (fd, "-2147483648", 11);
-	if (n < 0)
+	nb = n;
+	if (nb < 0)
 	{
-		write (fd, "-", 1);
-		n *= -1;
+		write(fd, "-", 1);
+		nb *= -1;
 	}
-	if (n > 9)
+	if (nb > 9)
 	{
-		ft_putnbr_fd (n / 10, fd);
-		ft_putnbr_fd (n % 10, fd);
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putchar_fd((nb % 10) + '0', fd);
 	}
 	else
-	{
-		c = '0' + n;
-		write (fd, &c, 1);
-	}
+		ft_putchar_fd(nb + '0', fd);
 }
 /*int main()
 {

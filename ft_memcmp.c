@@ -6,32 +6,27 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:37:05 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/18 19:09:46 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/20 18:40:34 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *dst, const void *str, size_t n)
 {
-	const char	*p2;
-	const char	*p1;
-	size_t		i;
+	size_t			i;
+	unsigned char	*str2;
+	unsigned char	*dst2;
 
+	dst2 = (unsigned char *)dst;
+	str2 = (unsigned char *)str;
 	i = 0;
-	p2 = (char *) s2;
-	p1 = (char *) s1;
-	while ((p1[i] && p2[i]) && i < n)
-	{
-		if (p1[i] < p2[i])
-			return (-1);
-		else if (p1[i] > p2[i])
-			return (1);
-		i++;
-	}
+	if (n)
+		while (n--)
+			if (*dst2++ != *str2++)
+				return (*(--dst2) - *(--str2));
 	return (0);
 }
-
 /*int main()
 {
     char prop1[] = "deaze";

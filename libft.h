@@ -6,7 +6,7 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 09:37:26 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/18 19:41:18 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/20 18:17:54 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(char *s1, char *s2, unsigned int n);
 void	*ft_memchr(const void *str, int c, size_t len);
-int		ft_memcmp(const void *s1, const void *s2, size_t n);
+int		ft_memcmp(const void *dst, const void *src, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);

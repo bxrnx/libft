@@ -6,7 +6,7 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:26:57 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/18 19:43:40 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/20 19:31:12 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*prueba;
+	t_list	*new_node;
 
-	prueba = (t_list *)malloc(sizeof(t_list));
-	if (!prueba)
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (!new_node)
 		return (NULL);
-	prueba->content = (void *)content;
-	return (prueba);
+	new_node->content = content;
+	new_node->next = NULL;
+	return (new_node);
 }
 /*int main() {
     t_list *nuevoNodo = ft_lstnew((void *)42);

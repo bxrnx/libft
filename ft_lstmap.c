@@ -6,7 +6,7 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:26:49 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/18 15:44:46 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/20 19:34:35 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,24 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*gon;
-	t_list	*aux;
-	t_list	*auxgon;
+	t_list	*new;
+	t_list	*node;
 
-	aux = lst;
-	gon = malloc(sizeof(t_list));
-	if (!gon)
-		return (0);
-	auxgon = gon;
-	while (aux)
+	if (!f || !lst)
+		return (NULL);
+	new = NULL;
+	while (lst)
 	{
-		auxgon->content = f(aux->content);
-		auxgon->next = malloc(sizeof(t_list));
-		if (auxgon->next)
-			ft_lstclear(&aux, del);
-		aux = aux->next;
-		auxgon = auxgon->next;
+		node = ft_lstnew(f(lst->content));
+		if (!node)
+		{
+			ft_lstclear(&node, (*del));
+			return (NULL);
+		}
+		ft_lstadd_back(&new, node);
+		lst = lst->next;
 	}
-	return (gon);
+	return (new);
 }
 
 /*int main() {
