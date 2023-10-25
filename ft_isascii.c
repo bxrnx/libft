@@ -6,18 +6,17 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:28:33 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/18 15:05:47 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/25 12:55:30 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(char c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);
-	else
-		return (0);
+	return (0);
 }
 
 /*#include<stdio.h>
