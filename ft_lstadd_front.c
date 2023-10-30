@@ -6,7 +6,7 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:25:19 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/17 15:24:29 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/26 15:51:44 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 
     // Verificamos que el nuevo nodo está al principio
     if (list != NULL) {
-        printf("El primer elemento de la lista es: %s\n", (char *)list->content);
+        printf("El primer elemento: %s\n", (char *)list->content);
     }
 
     return 0;

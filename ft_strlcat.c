@@ -6,7 +6,7 @@
 /*   By: bemelend <bemelend@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:56:13 by bemelend          #+#    #+#             */
-/*   Updated: 2023/10/20 15:31:42 by bemelend         ###   ########.fr       */
+/*   Updated: 2023/10/26 15:48:43 by bemelend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	dst[d] = 0;
 	return (di + si);
-}	
+}
 
 /*int main()
 {
